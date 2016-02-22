@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>quadratic equation</title>
+    </head>
+    <body>
+       <button onclick="questions()">Let's try to find simple answer for hard questions</button>
+       <p id="answer"></p>
+    <script>
+        function questions(){
+            var a = prompt("Please input first coefficient a=");
+            var b = prompt("Please input first coefficient b=");
+            var c = prompt("Please input first coefficient c=");
+        }
+           
+           
+            function equatation(a, b, c){
+                var d = Math.pow(b, 2) - 4 * a * c;
+                var x, y;
+                    if (d >=  0){
+                        d = Math.sqrt(d);
+                        x = (- b - d) / (2 * a);
+                        y = (- b + d) / (2 * a);
+                        return x, y;
+                         }else{
+                       return "Sorry, but this equatation has no answer"; 
+                    }
+            }
+            console.log (equatation(1, 4, 3));
+            
+        
+
+    </script>
+    </body>
+</html>
