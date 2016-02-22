@@ -5,31 +5,34 @@
     </head>
     <body>
        <button onclick="questions()">Let's try to find simple answer for hard questions</button>
-       <p id="answer"></p>
-    <script>
-        function questions(){
-            var a = prompt("Please input first coefficient a=");
-            var b = prompt("Please input first coefficient b=");
-            var c = prompt("Please input first coefficient c=");
-        }
-           
-           
-            function equatation(a, b, c){
-                var d = Math.pow(b, 2) - 4 * a * c;
-                var x, y;
-                    if (d >=  0){
-                        d = Math.sqrt(d);
-                        x = (- b - d) / (2 * a);
-                        y = (- b + d) / (2 * a);
-                        return x, y;
-                         }else{
-                       return "Sorry, but this equatation has no answer"; 
-                    }
-            }
-            console.log (equatation(1, 4, 3));
-            
-        
+       <p id="equatation"></p>
 
+    <script>
+       function questions(){
+        var a = prompt("Please enter first coefficient quadratic equatation a=");
+        var b = prompt("Now I need second coefficient b=");
+        var c = prompt("And last one c=");
+            if (isNaN(a)||isNaN(b)||isNaN(c)){
+                 document.getElementById("equatation").innerHTML = "Wrong!!"
+        }else {
+               
+
+            function equatation(a, b, c){
+            var d = Math.pow(b, 2) - 4 * a * c;
+            var x, y;
+                if (d >=  0){
+                    d = Math.sqrt(d);
+                    x = (- b - d) / (2 * a);
+                    y = (- b + d) / (2 * a);
+                    document.getElementById("equatation").innerHTML = "The answers are x=" + x + "and y=" + y;
+                     }else{
+                   document.getElementById("equatation").innerHTML = "Sorry, but this equatation has no answer"; 
+                }
+            }       
+          console.log (equatation(a, b, c));
+          
+        }
+       }
     </script>
     </body>
 </html>
